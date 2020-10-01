@@ -1,5 +1,7 @@
 import React from 'react';
 import "./homepage.css";
+import back from "./background-1771068_1920.jpg";
+import grunge from "./grunge-2667529_1920.jpg"
 class Homepage extends React.Component {
     render() {
         return (
@@ -7,7 +9,7 @@ class Homepage extends React.Component {
                     <div id="items">
                         <div class="single slide-in-elliptic-top-fwd">
                             <div class="question">
-                                <img src="grunge-2667529_1920.jpg" width="100%" height="100%"></img>
+                                <img src={grunge} width="100%" height="100%"></img>
                             </div>
                             <div class="answer">
                                 <h1>Write Blogs Here............</h1>
@@ -17,7 +19,7 @@ class Homepage extends React.Component {
                         </div>
                         <div class="single slide-in-elliptic-top-fwd">
                             <div class="question">
-                                <img src="background-1771068_1920.jpg" width="100%" height="100%"></img>
+                                <img src={back} width="100%" height="100%"></img>
                             </div>
                             <div class="answer">
                                 <h1>Read Others' Blogs............</h1>
