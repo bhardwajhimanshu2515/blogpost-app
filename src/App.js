@@ -10,6 +10,7 @@ import Homepage from "./components/homepage"
 import Login from "./components/login"
 import Footer from "../src/shared/footer"
 import Signup from "./components/signup"
+import Dashboard from './components/dashboard';
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
         <Switch>
           <Route path="/signup" exact>
             <Signup />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/dashboard/read" exact>
+            <Dashboard />
           </Route>
         </Switch>
         <Footer />
