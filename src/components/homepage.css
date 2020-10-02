@@ -75,5 +75,6 @@ img {
 }
 
 #container {
-    margin: 105px;
+    margin-top: 105px;
+    margin-bottom:105px;
 }
