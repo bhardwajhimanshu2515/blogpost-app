@@ -82,3 +82,11 @@ form>button {
         opacity: 1;
     }
 }
+#signup {
+    margin-top: 35px;
+    margin-bottom:35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}

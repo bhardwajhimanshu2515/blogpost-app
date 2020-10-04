@@ -5,7 +5,7 @@ import "./signup.css";
 class Signup extends React.Component {
     render() {
         return (
-            <div id="container">
+            <div id="signup">
                 <div class="slide-in-elliptic-right-fwd">
                     Welcome to Signup Page
                 </div><br/>
@@ -15,9 +15,9 @@ class Signup extends React.Component {
                         <input type="tel" placeholder="Phone Number"/>
                         <input type="email" placeholder="Email"/>
                         <input type="password" placeholder="Password"/>
-                        <button>Signup</button>
+                        <button class="bounce-in-top">Signup</button>
                         ........or........
-                        <Link to="/Login">Login</Link>
+                        <Link to="/Login" class="bounce-in-top">Login</Link>
                     </form>
                 </div>
             </div>
