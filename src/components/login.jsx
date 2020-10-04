@@ -1,8 +1,11 @@
 import React from 'react';
+import { useContext } from "react";
+import { UserContext } from "../UserContext";
 import {Link, Redirect} from "react-router-dom";
 import "./login.css";
 
 class Login extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -20,6 +23,7 @@ class Login extends React.Component {
     componentDidMount() {
 
     }
+    
     login = (e) => {
         const {email,password}=this.state;
         const rawurl = 'http://localhost:5000/api/user/login';

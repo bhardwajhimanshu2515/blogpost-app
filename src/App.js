@@ -5,6 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import './App.css';
+import { useState, useMemo } from "react";
+import { UserContext } from "./UserContext";
 import Navbar from "../src/shared/navbar"
 import Homepage from "./components/homepage"
 import Login from "./components/login"
@@ -13,9 +15,13 @@ import Signup from "./components/signup"
 import Dashboard from './components/dashboard';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
   return (
     <div className="App">
       <Router>
+      <UserContext.Provider value={value}>
         <Navbar />
         <Switch>
           <Route path="/" exact>
@@ -38,6 +44,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        </UserContext.Provider>
       </Router>
     </div>
   );
