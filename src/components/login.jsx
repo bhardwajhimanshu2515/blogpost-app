@@ -1,31 +1,27 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
 import {Link, Redirect} from "react-router-dom";
 import "./login.css";
+import {AuthContext} from '../context/auth-context'
 
-class Login extends React.Component {
+const Login = ()=>{
+    const auth = useContext(AuthContext)
     
-    constructor(props) {
-        super(props);
-        this.state = {
+    const[ state,setState] =useState({
             email:"",
             password:"",
-            token:"",
             user:[],
-            loggedIn:false
-        };
-    }
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
+        });
+    
+  const  handleChange = (e) => {
+      console.log(state);
+        setState({...state, [e.target.name]: e.target.value});
     };
 
-    componentDidMount() {
-
-    }
     
-    login = (e) => {
-        const {email,password}=this.state;
+    const login = (e) => {
+        const {email,password}=state;
         const rawurl = 'http://localhost:5000/api/user/login';
         const url = rawurl;
         const requestOptions = {
@@ -34,24 +30,28 @@ class Login extends React.Component {
             body: JSON.stringify({ email:email,password:password })
         };
         e.preventDefault();
-            fetch(url,requestOptions)
-                .then(response => response.json())
+           const responseData =  fetch(url,requestOptions)
+                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    this.setState({ user: [data], loaded: true });
-                    localStorage.setItem('userData',JSON.stringify(this.state.user));
-                    localStorage.setItem('token',JSON.stringify(this.state.user[0].token))
-                    this.setState({token:localStorage.getItem('token')})
+                    setState({ user: [data], loaded: true });
+                    localStorage.setItem('userData',JSON.stringify(state.user));
+                    localStorage.setItem('token',JSON.stringify(state.user[0].token))
+                    setState({token:localStorage.getItem('token')})
                     console.log(localStorage.getItem('userData'));
-                    this.setState({loggedIn:true});
+                    setState({loggedIn:true});
                 })
-                .catch(err => console.log("error ", err))
+                // console.log(data=>console.log(response.data);)
+                auth.login(responseData.user, responseData.token)
+                // .catch(err => console.log("error ", err))
 
     }
-    render() {
-        if(this.state.loggedIn==true){
-            return <Redirect to="/dashboard/read"></Redirect>
-        } 
+
+        // useEffect(() => {
+        //     return (
+        //         auth.isLoggedIn && <Redirect to="/dashboard/read" />
+        // )})
+        const {email,password} = state;
         return (
             <div id="login">
                 <div class="slide-in-elliptic-right-fwd">
@@ -59,9 +59,9 @@ class Login extends React.Component {
                 </div><br/>
                 <div id="loginForm" class="scale-in-hor-center">
                     <form>
-                        <input type="email" name="email" value={this.state.email} placeholder="Email" onChange={this.handleChange}></input>
-                        <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange}></input>
-                        <button onClick={this.login} id="loginButton" class="bounce-in-top">Login</button>
+                        <input type="email" name="email" value={email} placeholder="Email" onChange={handleChange}></input>
+                        <input type="password" name="password" value={password} placeholder="Password" onChange={handleChange}></input>
+                        <button onClick={login} id="loginButton" class="bounce-in-top">Login</button>
                         ........or........
                        <Link to="/signup" class="bounce-in-top">Signup</Link>
                     </form>
@@ -69,5 +69,5 @@ class Login extends React.Component {
             </div>
         );
     }
-}
+
 export default Login;
