@@ -33,6 +33,7 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         auth.login(data.token);
+        console.log(data.token);
       })
       .catch((error) => console.log("error", error));
     //    Router.browserHistory.push('/')
@@ -40,37 +41,43 @@ const Login = (props) => {
 
   
   const { email, password } = state;
-  return (
-    <div id="login">
-      <div class="slide-in-elliptic-right-fwd">Welcome to Login Page</div>
-      <br />
-      <div id="loginForm" class="scale-in-hor-center">
-        <form>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Email"
-            onChange={handleChange}
-          ></input>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Password"
-            onChange={handleChange}
-          ></input>
-          <button onClick={login} id="loginButton" class="bounce-in-top">
-            Login
-          </button>
-          ........or........
-          <Link to="/signup" class="bounce-in-top">
-            Signup
-          </Link>
-        </form>
-      </div>
-    </div>
-  );
+  if(auth.isLoggedIn){
+
+      return <Redirect to="/dashboard/read"></Redirect>
+  }
+  else{
+    return (
+        <div id="login">
+          <div class="slide-in-elliptic-right-fwd">Welcome to Login Page</div>
+          <br />
+          <div id="loginForm" class="scale-in-hor-center">
+            <form>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                placeholder="Email"
+                onChange={handleChange}
+              ></input>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                placeholder="Password"
+                onChange={handleChange}
+              ></input>
+              <button onClick={login} id="loginButton" class="bounce-in-top">
+                Login
+              </button>
+              ........or........
+              <Link to="/signup" class="bounce-in-top">
+                Signup
+              </Link>
+            </form>
+          </div>
+        </div>
+      );
+  }
 };
 
 export default Login;

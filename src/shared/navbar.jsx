@@ -13,17 +13,22 @@ function Navbar() {
                 </div>
                 <div id="navLinks">
                 
-                  <Link to="/about">About</Link>
+                  {
+                    (auth.isLoggedIn || !auth.isLoggedIn) && <Link to="/about">About</Link>
+                }
                  
                  {
-                    !auth.isLoggedIn && <Link to="/login">Login |</Link>
+                    !auth.isLoggedIn && <Link to="/login">Login</Link>
 
                  }
                 {
                     !auth.isLoggedIn && <Link to="/signup">Signup</Link>
                 }
                 {
-                    auth.isLoggedIn && <Link to="/logout" onClick={auth.logout}>Logout</Link>
+                    auth.isLoggedIn && <Link to="/dashboard/read">Dashboard</Link>
+                }
+                {
+                    auth.isLoggedIn && <Link to="/" onClick={auth.logout}>Logout</Link>
                 }
                 </div>
             </div>
