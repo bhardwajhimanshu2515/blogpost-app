@@ -41,7 +41,15 @@ form>button {
     animation: pulse 5s infinite;
     border: none;
 }
-
+@keyframes pulse {
+        0% {
+            background-color: #001F3F;
+        }
+    
+        100% {
+            background-color: #FF4136;
+        }
+    }
 .slide-in-elliptic-top-fwd {
     -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
