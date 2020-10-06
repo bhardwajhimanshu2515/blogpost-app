@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import { useState, useMemo } from "react";
 import { UserContext } from "./UserContext";
@@ -11,18 +11,21 @@ import Signup from "./components/signup";
 import Dashboard from "./components/dashboard";
 import { AuthContext } from "./context/auth-context";
 
-function App() {
+function App(props) {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(false);
+  const [token, setToken] = useState("");
 
   const login = useCallback((token) => {
+    console.log('login called');
     setToken(token);
-    setUser(user);
+    // setUser(user);
     localStorage.setItem("token", JSON.stringify({ token: token }));
+    
   }, []);
 
   const logout = useCallback(() => {
     setToken(null);
+    localStorage.removeItem("token")
   });
   // const value = useMemo(() => ({ user, setUser }), [user, setUser]);
   return (
