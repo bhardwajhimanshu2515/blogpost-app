@@ -2,11 +2,8 @@ import React from "react";
 import "./homepage.css";
 import back from "./background-1771068_1920.jpg";
 import grunge from "./grunge-2667529_1920.jpg";
-import { AuthContext } from "../context/auth-context";
-import { useContext } from "react";
 
 const Homepage = () => {
-  const auth = useContext(AuthContext);
   return (
     <div id="container">
       <div id="items">
