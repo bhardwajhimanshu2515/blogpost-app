@@ -1,8 +1,6 @@
 import React, { useCallback } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
-import { useState, useMemo } from "react";
-import { UserContext } from "./UserContext";
 import Navbar from "../src/shared/navbar";
 import Homepage from "./components/homepage";
 import Login from "./components/login";
@@ -24,6 +22,11 @@ function App(props) {
           <Switch>
             <Route path="/login" exact>
               <Login />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/signup" exact>
+              <Signup />
             </Route>
           </Switch>
           <Switch>

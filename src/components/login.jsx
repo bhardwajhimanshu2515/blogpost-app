@@ -1,12 +1,31 @@
 import React,{useState} from "react";
 import { Link, Redirect,Router } from "react-router-dom";
 import "./login.css";
+import { useDispatch, useSelector } from "react-redux";
+import { loginItem } from "../../src/data/reducers/user.reducer";
 
 function Login(){
   const [emails,setEmail]=useState("");
   const [password,setPassword]=useState("");
-  const loginfunc=()=>{
-
+  const dispatch = useDispatch();
+  const userList = useSelector(state => state.userReducer).userInfo;
+  const loggedIn=useSelector(state => state.userReducer).loggedIn;
+  const loginfunc=async (e)=>{
+    e.preventDefault();
+    let payload={
+      email:emails,
+      password:password
+    }
+    try{
+      let response=await dispatch(loginItem(payload));
+      const userId = localStorage.getItem('userId');
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+  if(loggedIn===true){
+    return <Redirect to="/create"></Redirect>
   }
         return (
             <div id="login">
