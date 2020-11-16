@@ -7,6 +7,7 @@ import Login from "./components/login";
 import Footer from "../src/shared/footer";
 import Signup from "./components/signup";
 import Dashboard from "./components/dashboard";
+import CreateBlog from "./components/createBlog";
 
 
 function App(props) {
@@ -30,13 +31,13 @@ function App(props) {
             </Route>
           </Switch>
           <Switch>
-            <Route path="/signup" exact>
-              <Signup />
+            <Route path="/dashboard/read" exact>
+              <Dashboard />
             </Route>
           </Switch>
           <Switch>
-            <Route path="/dashboard/read" exact>
-              <Dashboard />
+            <Route path="/create" exact>
+              <CreateBlog />
             </Route>
           </Switch>
           <Footer />

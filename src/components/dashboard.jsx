@@ -1,39 +1,34 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./dashboard.css";
+import AllBlogs from "./allBlogs";
+import { useDispatch, useSelector } from "react-redux";
+import { addBlogItem, getBlogItem } from '../data/reducers/blog.reducer';
 
-class Dashboard extends React.Component {
-    render() {
-        return (
-            <div id="allContent">
-                <div class="oneItem slide-in-elliptic-top-fwd">
-                    <div class="imag">
-                        <img src="https://images.idgesg.net/images/article/2019/11/ai_artificial_intelligence_ml_machine_learning_vector_by_kohb_gettyimages_1146634284-100817775-large.jpg" width="100px" height="100px"></img>
-                    </div>
-                    <div class="info">
-                        <div class="title">
-                            AI: Artificial Intelligence
-                        </div>
-                        <div class="blog-btn-over">
-                            <button class="blog-read-btn btn ">Click To Read Blog</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="oneItem slide-in-elliptic-top-fwd">
-                    <div class="imag">
-                        <img src="https://developer.apple.com/news/images/coreml-og.png" width="100px" height="100px"></img>
-                    </div>
-                    <div class="info">
-                        <div class="title">
-                            ML: Machine learning is the key to future.
-                        </div>
-                        <div class="blog-btn-over ">
-                            <button class="blog-read-btn btn ">Click To Read Blog</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
+function Dashboard() {
+    const userId = localStorage.getItem('userId');
+    const dispatch = useDispatch();
+    const getAllBlogItems = async (e) => {
+        let payload = userId;
+        try {
+            let response = await dispatch(getBlogItem(payload));
+            let res = await dispatch(addBlogItem(response.payload));
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
+
+    useEffect(() => {
+        getAllBlogItems();
+    }, []);
+    let blogLists = useSelector(state => state.todoReducer).blogList;
+      const blogjsx=blogLists.map((item)=>(<AllBlogs title={item.title} description={item.description} image={item.img} />))
+    return (
+        <div id="allContent">
+            {blogjsx}
+        </div>
+    );
 }
+
 export default Dashboard;

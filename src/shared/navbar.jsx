@@ -15,9 +15,9 @@ function Navbar() {
                     Blogs4You
                 </div>
                 <div id="navLinks">
-                    <Link to="/">Home</Link>
                     <Link to="/about">About</Link>
-                    <Link to="/dashboard/read">Dashboard</Link>
+                    <Link to="/dashboard/read">Read</Link>
+                    <Link to="/create">Write</Link>
                     <Link to="/login">Logout</Link>
                 </div>
             </div>
