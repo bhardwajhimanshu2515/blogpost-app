@@ -3,7 +3,7 @@ import "./allBlogs.css";
 import { useDispatch, useSelector } from "react-redux";
 import {getOneBlogItem} from "../data/reducers/blog.reducer";
 import { Redirect } from "react-router";
-import { useHistory,Link } from "react-router-dom";
+import { useHistory,Link,NavLink } from "react-router-dom";
 function AllBlogs(props) {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -32,7 +32,7 @@ function AllBlogs(props) {
                     {props.title}
                         </div>
                 <div class="blog-btn-over">
-                    <Link to="/dashboard/one" class="blog-read-btn btn " onClick={(e)=>oneBlog(e,props.id)}>Click To Read Blog</Link>
+                    <NavLink to="/dashboard/one" class="blog-read-btn btn " onClick={(e)=>oneBlog(e,props.id)}>Click To Read Blog</NavLink>
                 </div>
             </div>
         </div>

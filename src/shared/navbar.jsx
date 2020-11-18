@@ -6,6 +6,8 @@ import {loginItem  } from '../data/reducers/user.reducer';
 
 function Navbar() {
     const loggedIn=useSelector(state => state.userReducer).loggedIn;
+    const userImg=localStorage.getItem('userImage');
+    console.log("userimg=",userImg);
     if(loggedIn===true){
         return (
             <div id="navbar">
@@ -13,10 +15,10 @@ function Navbar() {
                     Blogs4You
                 </div>
                 <div id="navLinks">
-                    <Link to="/about">About</Link>
-                    <Link to="/dashboard/read">Read</Link>
+                    <Link to="/dashboard/read">All Blogs</Link>
+                    <Link to="/dashboard/read/yours">Your Blogs</Link>
                     <Link to="/create">Write</Link>
-                    <Link to="/login">Logout</Link>
+                    <Link to="/about"><img src={userImg} style={{ width: '50px', minHeight: '0px',borderRadius:"50%",maxHeight:"50px" }}></img></Link>
                 </div>
             </div>
         );

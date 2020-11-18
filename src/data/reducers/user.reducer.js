@@ -10,6 +10,7 @@ export const loginItem = createAsyncThunk(
             localStorage.setItem('userdata',response.data);
             localStorage.setItem('userId',response.data.userId);
             localStorage.setItem('token',response.data.token);
+            localStorage.setItem('userImage',response.data.img);
             return response.data
         }
         else thunkAPI.rejectWithValue('network call failed');
@@ -20,9 +21,11 @@ export const signupItem = createAsyncThunk(
     async (payload, thunkAPI) => {
         let response = await signupAPI(payload);
         console.log("responseeee=",response);
+        console.log("img=",response.data.img);
         if (response.isSuccessful===true){
             localStorage.setItem('userdata',response.data);
             localStorage.setItem('userId',response.data.userId);
+            localStorage.setItem('userImage',response.data.img);
             localStorage.setItem('token',response.data.token);
             return response.data
         }
