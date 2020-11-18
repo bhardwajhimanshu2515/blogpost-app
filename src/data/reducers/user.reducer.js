@@ -5,12 +5,16 @@ export const loginItem = createAsyncThunk(
     'user/loginItem',
     async (payload, thunkAPI) => {
         let response = await loginAPI(payload);
+        console.log("res=",response)
         console.log("responseeee=",response);
         if (response.isSuccessful===true){
-            localStorage.setItem('userdata',response.data);
             localStorage.setItem('userId',response.data.userId);
-            localStorage.setItem('token',response.data.token);
+            localStorage.setItem('userName',response.data.name);
             localStorage.setItem('userImage',response.data.img);
+            localStorage.setItem('userEmail',response.data.email);
+            localStorage.setItem('userNumber',response.data.phoneNumber);
+            localStorage.setItem('token',response.data.token);
+            
             return response.data
         }
         else thunkAPI.rejectWithValue('network call failed');

@@ -1,0 +1,12 @@
+#profile{
+    width: 50%;
+    height: 420px;
+    background: #fff ;
+    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 30px 25%;
+}
+#profName{
+    font-size: 25px;
+    font-weight: 500;
+}

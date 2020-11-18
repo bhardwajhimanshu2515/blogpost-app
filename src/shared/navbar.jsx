@@ -18,7 +18,7 @@ function Navbar() {
                     <Link to="/dashboard/read">All Blogs</Link>
                     <Link to="/dashboard/read/yours">Your Blogs</Link>
                     <Link to="/create">Write</Link>
-                    <Link to="/about"><img src={userImg} style={{ width: '50px', minHeight: '0px',borderRadius:"50%",maxHeight:"50px" }}></img></Link>
+                    <Link to="/profile"><img src={userImg} style={{ width: '50px', minHeight: '0px',borderRadius:"50%",maxHeight:"50px" }}></img></Link>
                 </div>
             </div>
         );
