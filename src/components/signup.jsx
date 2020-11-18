@@ -35,7 +35,7 @@ function Signup() {
         setImage(file.secure_url);
         setLoading(false);
         if (file.secure_url !== "") {
-            toast.success("Image Uploaded");
+            toast.success("Signup Successful");
         }
         else {
             toast.error("Image Not Uploaded")
