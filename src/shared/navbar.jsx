@@ -1,6 +1,4 @@
 import React from 'react';
-import { useContext } from "react";
-import { UserContext } from "../UserContext";
 import {Link} from "react-router-dom";
 import "./navbar.css";
 import { useDispatch, useSelector } from "react-redux";

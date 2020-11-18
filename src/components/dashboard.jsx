@@ -23,7 +23,7 @@ function Dashboard() {
         getAllBlogItems();
     }, []);
     let blogLists = useSelector(state => state.todoReducer).blogList;
-      const blogjsx=blogLists.map((item)=>(<AllBlogs title={item.title} description={item.description} image={item.img} />))
+      const blogjsx=blogLists.map((item)=>(<AllBlogs title={item.title} description={item.description} image={item.img} id={item._id} />))
     return (
         <div id="allContent">
             {blogjsx}

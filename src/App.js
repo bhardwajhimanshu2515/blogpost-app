@@ -8,8 +8,7 @@ import Footer from "../src/shared/footer";
 import Signup from "./components/signup";
 import Dashboard from "./components/dashboard";
 import CreateBlog from "./components/createBlog";
-
-
+import OneBlog from "./components/oneBlog";
 function App(props) {
   return (
     <div className="App">
@@ -38,6 +37,11 @@ function App(props) {
           <Switch>
             <Route path="/create" exact>
               <CreateBlog />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/dashboard/one" exact>
+              <OneBlog />
             </Route>
           </Switch>
           <Footer />

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { createAPI,getAPI } from "../services/blog.service";
+import { createAPI,getAPI,getOneAPI } from "../services/blog.service";
 
 export const createBlogItem = createAsyncThunk(
     'blog/blogItem',
@@ -23,12 +23,23 @@ export const getBlogItem = createAsyncThunk(
         else thunkAPI.rejectWithValue('network call failed');
     }
 )
+export const getOneBlogItem = createAsyncThunk(
+    'blog/blogItem',
+    async (payload, thunkAPI) => {
+        let response = await getOneAPI(payload);
+        if (response.isSuccessful===true){
+            return response.data
+        }
+        else thunkAPI.rejectWithValue('network call failed');
+    }
+)
 
 const blogSlice = createSlice({
     name: 'blog',
     initialState: {
         blogList: [
-        ]
+        ],
+        oneBlog:[]
     },
     reducers: {
         addBlogItem: (state, action) => {
@@ -43,6 +54,9 @@ const blogSlice = createSlice({
         },
         [getBlogItem.fulfilled]: (state, action) => {
             state.blogList.push(action.payload);
+        },
+        [getOneBlogItem.fulfilled]:(state,action)=>{
+            state.oneBlog=action.payload
         }
     }
 });

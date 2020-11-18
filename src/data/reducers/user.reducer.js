@@ -43,13 +43,15 @@ const userSlice = createSlice({
     extraReducers: {
         [loginItem.fulfilled]: (state, action) => {
             state.userInfo.push(action.payload);
-            let updateConnector=!state.loggedIn;
+            let updateConnector=true;
             state.loggedIn=updateConnector;
+            localStorage.setItem('loggedIn',state.loggedIn);
         },
         [signupItem.fulfilled]: (state, action) => {
             state.userInfo.push(action.payload);
-            let updateConnector=!state.loggedIn;
+            let updateConnector=true;
             state.loggedIn=updateConnector;
+            localStorage.setItem('loggedIn',state.loggedIn);
         }
     }
 });

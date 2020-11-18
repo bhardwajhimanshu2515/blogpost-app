@@ -11,3 +11,9 @@ export const getAPI = async () => {
     let authHeader = getAuthHeaders()
     return await get(url,{ ...authHeader })
 }
+export const getOneAPI = async (id) => {
+    console.log(api);
+    let url = `${api}/blog/one/?blogId=`+id;
+    let authHeader = getAuthHeaders()
+    return await get(url,{ ...authHeader })
+}
