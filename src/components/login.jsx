@@ -25,7 +25,7 @@ function Login(){
     }
   }
   if(loggedIn===true){
-    return <Redirect to="/dashboard/read"></Redirect>
+    return <Redirect to="/create"></Redirect>
   }
         return (
             <div id="login">

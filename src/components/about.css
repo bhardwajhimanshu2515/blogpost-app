@@ -1,0 +1,34 @@
+#about{
+    width:80%;
+    min-height: 420px;
+    padding: 10px;
+    margin: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.developer{
+    width:20%;
+    height:250px;
+    background-color: #fff;
+    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 30px;
+}
+.imgDev>img{
+    width: 150px;
+    height: 160px;
+    border-radius: 50%;
+}
+.nameDev{
+    font-size: 25px;
+    font-weight: 500;
+}
+.linksDev>a{
+    text-decoration: none;
+}
+.linksDev>a>i{
+    margin-right:10px;
+}
