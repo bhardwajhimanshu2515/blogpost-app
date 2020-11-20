@@ -45,22 +45,30 @@ const userSlice = createSlice({
         loggedIn:false
     },
     reducers: {
-        
+        logoutFunction:(state,action)=>{
+            state.userInfo="";
+            let updateConnector=false;
+            state.loggedIn=updateConnector;
+            localStorage.removeItem('userdata');
+            localStorage.removeItem('userId');
+            localStorage.removeItem('token');
+            localStorage.removeItem('userImage');
+        }
     },
     extraReducers: {
         [loginItem.fulfilled]: (state, action) => {
-            state.userInfo.push(action.payload);
+            state.userInfo=action.payload;
             let updateConnector=true;
             state.loggedIn=updateConnector;
             localStorage.setItem('loggedIn',state.loggedIn);
         },
         [signupItem.fulfilled]: (state, action) => {
-            state.userInfo.push(action.payload);
+            state.userInfo=action.payload;
             let updateConnector=true;
             state.loggedIn=updateConnector;
             localStorage.setItem('loggedIn',state.loggedIn);
         }
     }
 });
-
+export const { logoutFunction } = userSlice.actions;
 export default userSlice.reducer;
