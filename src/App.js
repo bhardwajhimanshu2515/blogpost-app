@@ -10,6 +10,7 @@ import Dashboard from "./components/dashboard";
 import CreateBlog from "./components/createBlog";
 import OneBlog from "./components/oneBlog";
 import Profile from "./components/profile";
+import About from "./components/about";
 function App(props) {
   return (
     <div className="App">
@@ -48,6 +49,11 @@ function App(props) {
           <Switch>
             <Route path="/profile" exact>
               <Profile />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/about" exact>
+              <About />
             </Route>
           </Switch>
           <Footer />
