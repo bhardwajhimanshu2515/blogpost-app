@@ -4,7 +4,7 @@ import "./createBlog.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createBlogItem } from '../data/reducers/blog.reducer';
-
+import {Redirect} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 function CreateBlog() {
@@ -55,6 +55,10 @@ function CreateBlog() {
             console.log(err);
           }
     }
+    const loggedIn=useSelector(state => state.userReducer).loggedIn;
+      if(loggedIn===false){
+          return <Redirect to="/"></Redirect>
+      }
     return (
         <div id="createBlog">
             <div class="slide-in-elliptic-right-fwd">

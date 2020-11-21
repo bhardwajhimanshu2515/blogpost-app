@@ -1,5 +1,5 @@
 import React,{useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./dashboard.css";
 import AllBlogs from "./allBlogs";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +24,10 @@ function Dashboard() {
     }, []);
     let blogLists = useSelector(state => state.todoReducer).blogList;
       const blogjsx=blogLists.map((item)=>(<AllBlogs title={item.title} description={item.description} image={item.img} id={item._id} />))
+      const loggedIn=useSelector(state => state.userReducer).loggedIn;
+      if(loggedIn===false){
+          return <Redirect to="/"></Redirect>
+      }
     return (
         <div id="allContent">
             {blogjsx}

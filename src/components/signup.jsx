@@ -53,8 +53,6 @@ function Signup() {
         try {
             let response = await dispatch(signupItem(payload));
             const userId = localStorage.getItem('userId');
-            console.log("typeof=", typeof userId);
-            console.log("userId=", userId);
         }
         catch (err) {
             console.log(err);

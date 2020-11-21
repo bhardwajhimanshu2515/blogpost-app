@@ -29,7 +29,10 @@ export const signupItem = createAsyncThunk(
         if (response.isSuccessful === true) {
             localStorage.setItem('userdata', response.data);
             localStorage.setItem('userId', response.data.userId);
+            localStorage.setItem('userName', response.data.name);
             localStorage.setItem('userImage', response.data.img);
+            localStorage.setItem('userEmail', response.data.email);
+            localStorage.setItem('userNumber', response.data.phoneNumber);
             localStorage.setItem('token', response.data.token);
             return response.data
         }
@@ -54,11 +57,13 @@ const userSlice = createSlice({
             localStorage.removeItem('token');
             localStorage.removeItem('userImage');
             localStorage.removeItem('loggedIn');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userNumber');
         }
     },
     extraReducers: {
         [loginItem.fulfilled]: (state, action) => {
-            console.log("action token=",action.payload.token);
             if (action.payload.token) {
                 state.userInfo = action.payload;
                 let updateConnector = true;
@@ -70,7 +75,6 @@ const userSlice = createSlice({
             }
         },
         [signupItem.fulfilled]: (state, action) => {
-            console.log("action token=",action.payload.token);
             if (action.payload.token) {
                 state.userInfo = action.payload;
                 let updateConnector = true;

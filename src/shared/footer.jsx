@@ -5,7 +5,7 @@ class Footer extends React.Component {
         return (
             <div id="bottomBar">
                 <div id="left" class="focus-in-expand-fwd">
-                    All Rights Reserved By Himanshu Bhardwaj
+                    All Rights Reserved By Blogs4You
                 </div>
                 <div id="right">
                     <a href="https://www.linkedin.com/in/mern-full-stack-developer/" class="fa fa-linkedin"></a>

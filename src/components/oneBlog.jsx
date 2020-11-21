@@ -1,9 +1,14 @@
 import React from "react";
 import "./oneBlog.css";
 import { useDispatch, useSelector } from "react-redux";
+import {Redirect} from "react-router-dom";
 
 function OneBlog(){
     let blog= useSelector(state => state.todoReducer).oneBlog;
+    const loggedIn=useSelector(state => state.userReducer).loggedIn;
+      if(loggedIn===false){
+          return <Redirect to="/"></Redirect>
+      }
     return(
         <div id="oneBlog1">
             <div id="title1">
