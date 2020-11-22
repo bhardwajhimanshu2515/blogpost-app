@@ -50,6 +50,11 @@ function CreateBlog() {
         }
         try{
             let response=await dispatch(createBlogItem(payload));
+            console.log("created-blog-response=",response);
+            setTitle("");
+            setImage("");
+            setDescription("");
+            toast.success("Blog Uploaded");
           }
           catch(err){
             console.log(err);
