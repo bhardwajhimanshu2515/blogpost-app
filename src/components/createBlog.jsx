@@ -57,6 +57,7 @@ function CreateBlog() {
             toast.success("Blog Uploaded");
           }
           catch(err){
+            toast.error("Error in Uploading Blog");
             console.log(err);
           }
     }
