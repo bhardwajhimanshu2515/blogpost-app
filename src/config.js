@@ -1,3 +1,3 @@
 export const constants = {
-    endpoint: "http://localhost:5000/api"
+    endpoint: "https://blogs4youapi.herokuapp.com/api"
 }
