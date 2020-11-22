@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+@media only screen and (max-width:360px) {
+  #container {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+  #items{
+    flex-wrap: wrap;
+    background-color: none;
+  }
+  #items>.single{
+    width:100%;
+    flex-direction: column;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  #items>.single>.question{
+    width: 100%;
+    height:150px;
+  }
+  #items>.single>.answer{
+    width: 100%;
+  }
+
+  #navbar{
+    flex-direction: column;
+  }
+}
+
