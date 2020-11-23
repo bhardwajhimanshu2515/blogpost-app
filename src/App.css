@@ -107,7 +107,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 20px 5%;
+    margin: 40px 5%;
   }
 }
 @media only screen and (max-width:320px) {
@@ -181,7 +181,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 20px 5%;
+    margin: 40px 5%;
   }
 }
 @media only screen and (max-width:360px) {
@@ -252,7 +252,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 20px 5%;
+    margin: 40px 5%;
   }
 }
 @media only screen and (max-width:414px) {
@@ -323,7 +323,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 20px 5%;
+    margin: 40px 5%;
   }
 }
 @media only screen and (max-width:768px) {
@@ -394,6 +394,6 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 20px 5%;
+    margin: 40px 5%;
   }
 }
