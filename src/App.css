@@ -75,6 +75,8 @@
   }
   #login>#loginForm{
     width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   #signup>#signupForm{
     width: 80%;
@@ -147,6 +149,8 @@
   }
   #login>#loginForm{
     width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   #signup>#signupForm{
     width: 80%;
@@ -216,6 +220,8 @@
   }
   #login>#loginForm{
     width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   #signup>#signupForm{
     width: 80%;
@@ -285,6 +291,8 @@
   }
   #login>#loginForm{
     width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   #signup>#signupForm{
     width: 80%;
@@ -354,6 +362,8 @@
   }
   #login>#loginForm{
     width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   #signup>#signupForm{
     width: 80%;
