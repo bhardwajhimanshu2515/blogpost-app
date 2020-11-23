@@ -20,7 +20,7 @@ function Login(){
     try{
       let response=await dispatch(loginItem(payload));
       const userId = localStorage.getItem('userId');
-      toast.success("Login Successful")
+      
     }
     catch(err){
       console.log(err);
@@ -28,6 +28,7 @@ function Login(){
     }
   }
   if(loggedIn===true){
+    toast.success("Login Successful")
     return <Redirect to="/create"></Redirect>
   }
         return (
