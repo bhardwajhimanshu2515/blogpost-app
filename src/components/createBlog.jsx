@@ -86,7 +86,7 @@ function CreateBlog() {
                     <button class="bounce-in-top" type="submit" onClick={createFunc}>Create</button>
                 </form>
             </div>
-            <ToastContainer />
+            
         </div>
     );
 }

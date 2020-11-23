@@ -11,6 +11,7 @@ import CreateBlog from "./components/createBlog";
 import OneBlog from "./components/oneBlog";
 import Profile from "./components/profile";
 import About from "./components/about";
+import { ToastContainer, toast } from 'react-toastify';
 function App(props) {
   return (
     <div className="App">
@@ -57,6 +58,7 @@ function App(props) {
             </Route>
           </Switch>
           <Footer />
+          <ToastContainer />
       </Router>
     </div>
   );
