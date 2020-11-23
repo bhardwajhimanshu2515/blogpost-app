@@ -97,7 +97,7 @@
   }
   .App>#oneBlog1{
     width: 90%;
-    margin: 20px 5%;
+    margin: 60px 5%;
     padding: 50px;
     padding: 0px;
   }
@@ -107,7 +107,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 40px 5%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:320px) {
@@ -171,7 +171,7 @@
   }
   .App>#oneBlog1{
     width: 90%;
-    margin: 20px 5%;
+    margin: 60px 5%;
     padding: 50px;
     padding: 0px;
   }
@@ -181,7 +181,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 40px 5%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:360px) {
@@ -252,7 +252,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 40px 5%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:414px) {
@@ -313,7 +313,7 @@
   }
   .App>#oneBlog1{
     width: 90%;
-    margin: 20px 5%;
+    margin: 60px 5%;
     padding: 50px;
     padding: 0px;
   }
@@ -323,7 +323,7 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 40px 5%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:768px) {
@@ -394,6 +394,6 @@
   .App>#profile{
     width: 90%;
     padding: 0;
-    margin: 40px 5%;
+    margin: 60px 5%;
   }
 }
