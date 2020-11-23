@@ -66,6 +66,10 @@
   #navbar>#navLinks{
     width: 250px;
   }
+  #about{
+    width:100%;
+    margin: 20px 0%;
+  }
   #about>.developer{
     width: 100%;
     margin: 20px 0%;
@@ -140,6 +144,10 @@
   }
   #navbar>#navLinks{
     width: 250px;
+  }
+  #about{
+    width:100%;
+    margin: 20px 0%;
   }
   #about>.developer{
     width: 100%;
@@ -216,6 +224,10 @@
     flex-direction: column;
     height:140px
   }
+  #about{
+    width:100%;
+    margin: 20px 0%;
+  }
   #about>.developer{
     width: 100%;
     margin: 20px 0%;
@@ -291,6 +303,10 @@
     flex-direction: column;
     height:140px
   }
+  #about{
+    width:100%;
+    margin: 20px 0%;
+  }
   #about>.developer{
     width: 100%;
     margin: 20px 0%;
@@ -365,6 +381,10 @@
   .App>#navbar{
     flex-direction: column;
     height:140px
+  }
+  #about{
+    width:100%;
+    margin: 20px 0%;
   }
   #about>.developer{
     width: 100%;
