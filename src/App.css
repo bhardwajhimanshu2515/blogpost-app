@@ -61,6 +61,48 @@
 
   #navbar{
     flex-direction: column;
+    height:140px
+  }
+  #about>.developer{
+    width: 100%;
+  }
+  #login{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #login>#loginForm{
+    width: 80%;
+  }
+  #signup>#signupForm{
+    width: 80%;
+  }
+  #createBlog>#blogForm{
+    width: 80%;
+  }
+  #allContent>.oneItem{
+    width: 100%;
+    height:200px;
+  }
+  #allContent>.oneItem>.info>.blog-btn-over{
+    font-size: smaller;
+    font-weight: 200;
+    width: 100%;
+    margin-left: 0px;
+    padding: 5px;
+  }
+  .App>#oneBlog1{
+    width: 90%;
+    margin: 20px 5%;
+    padding: 50px;
+    padding: 0px;
+  }
+  .App>#oneBlog1>#title1{
+    width: 100%;
+  }
+  .App>#profile{
+    width: 90%;
+    padding: 0;
+    margin: 20px 5%;
   }
 }
 
