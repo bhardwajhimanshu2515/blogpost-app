@@ -3,6 +3,7 @@ import { Link, Redirect,Router } from "react-router-dom";
 import "./login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loginItem } from "../../src/data/reducers/user.reducer";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Login(){
   const [emails,setEmail]=useState("");
@@ -19,9 +20,11 @@ function Login(){
     try{
       let response=await dispatch(loginItem(payload));
       const userId = localStorage.getItem('userId');
+      toast.success("Login Successful")
     }
     catch(err){
       console.log(err);
+      toast.error("Login Failed");
     }
   }
   if(loggedIn===true){
