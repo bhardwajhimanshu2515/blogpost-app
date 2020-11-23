@@ -68,6 +68,7 @@
   }
   #about>.developer{
     width: 100%;
+    margin: 20px 0%;
   }
   #login{
     margin-top: 20px;
@@ -105,9 +106,9 @@
     width: 100%;
   }
   .App>#profile{
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 60px 0%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:320px) {
@@ -142,6 +143,7 @@
   }
   #about>.developer{
     width: 100%;
+    margin: 20px 0%;
   }
   #login{
     margin-top: 20px;
@@ -182,9 +184,9 @@
     height:400px;
   }
   .App>#profile{
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 60px 0%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:360px) {
@@ -216,6 +218,7 @@
   }
   #about>.developer{
     width: 100%;
+    margin: 20px 0%;
   }
   #login{
     margin-top: 20px;
@@ -256,9 +259,9 @@
     height:400px;
   }
   .App>#profile{
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 60px 0%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:414px) {
@@ -290,6 +293,7 @@
   }
   #about>.developer{
     width: 100%;
+    margin: 20px 0%;
   }
   #login{
     margin-top: 20px;
@@ -330,9 +334,9 @@
     height:400px;
   }
   .App>#profile{
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 60px 0%;
+    margin: 60px 5%;
   }
 }
 @media only screen and (max-width:768px) {
@@ -364,6 +368,7 @@
   }
   #about>.developer{
     width: 100%;
+    margin: 20px 0%;
   }
   #login{
     margin-top: 20px;
@@ -404,8 +409,8 @@
     width: 100%;
   }
   .App>#profile{
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 60px 0%;
+    margin: 60px 5%;
   }
 }
