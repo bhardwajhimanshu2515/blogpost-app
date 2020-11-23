@@ -69,6 +69,7 @@
   .App>#about{
     width:90%;
     margin: 20px 5%;
+    padding: 0px;
   }
   #about>.developer{
     width: 100%;
@@ -148,6 +149,7 @@
   .App>#about{
     width:90%;
     margin: 20px 5%;
+    padding: 0px;
   }
   #about>.developer{
     width: 100%;
@@ -227,6 +229,7 @@
   .App>#about{
     width:90%;
     margin: 20px 5%;
+    padding: 0px;
   }
   #about>.developer{
     width: 100%;
@@ -306,6 +309,7 @@
   .App>#about{
     width:90%;
     margin: 20px 5%;
+    padding: 0px;
   }
   #about>.developer{
     width: 100%;
@@ -385,6 +389,7 @@
   .App>#about{
     width:90%;
     margin: 20px 5%;
+    padding: 0px;
   }
   #about>.developer{
     width: 100%;
